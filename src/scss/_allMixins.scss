@@ -1,0 +1,131 @@
+// $name - имя шрифтового семейства;
+// $file - имя файла;
+// $weight - жирность шрифта (по-умолчанию установлено значение 400, но если мы передадим параметр, то значение по-умолчанию будет проигнорировано)
+// $style - стиль начертания (тоже установлен по-умолчанию normal)
+
+@mixin font-face($name, $file, $weight: 400, $style: normal) {
+	@font-face {
+		src:
+			local("#{$file}"),
+			url("../fonts/#{$file}.woff2") format("woff2"),
+			url("../fonts/#{$file}.woff") format("woff");
+		font-family: "#{$name}";
+		font-weight: $weight;
+		font-style: $style;
+		font-display: swap;
+	}
+}
+
+@include font-face("DaysOne", "DaysOne-Regular", 400);
+@include font-face("ShantellSans", "ShantellSans-Regular", 400);
+@include font-face("ShantellSans", "ShantellSans-Medium", 500);
+@include font-face("Inter", "Inter_18pt-Regular", 400);
+@include font-face("Inter", "Inter_18pt-Medium", 500);
+@include font-face("Inter", "Inter_18pt-Bold", 700);
+
+.color__first {
+	color: var(--color-third);
+}
+
+.bg {
+	&__first {
+		background: center / cover no-repeat url("../img/bg_1.webp");
+	}
+
+	&__second {
+		background: center / cover no-repeat url("../img/bg_2.webp");
+	}
+
+	&__third {
+		background: var(--color-second);
+	}
+
+	&__fourth {
+		background: var(--color-light);
+	}
+}
+
+.border-radius {
+	&__first {
+		border-radius: 60px;
+	}
+}
+
+[data-barba] {
+	position: absolute;
+	width: 100%;
+}
+
+section ul:not(.no-list) {
+	display: flex;
+	flex-direction: column;
+	padding-left: 30px;
+	gap: 15px;
+
+	li {
+		position: relative;
+		padding-left: 37px;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 1.5;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 3px;
+			width: 22px;
+			height: 22px;
+			background: center / contain no-repeat url("../img/i-paws.svg");
+		}
+	}
+}
+
+.text-arrow {
+	position: relative;
+	display: block;
+	width: max-content;
+	font-family: "ShantellSans", sans-serif;
+
+	img {
+		position: absolute;
+	}
+
+	&__first {
+		padding-bottom: 23px;
+
+		img {
+			right: -37px;
+			top: 10px;
+			width: 27px;
+			height: 30px;
+		}
+	}
+}
+
+@keyframes info {
+	from {
+		transform: translateY(0px);
+	}
+	to {
+		transform: translateY(-5px);
+	}
+}
+.info {
+	font-family: "ShantellSans", sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.32;
+	animation: info 1.5s infinite alternate-reverse ease-in-out;
+
+	&__first {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 30px 10px 50px 10px;
+		width: 183px;
+		height: 213px;
+		text-align: center;
+		background: center / contain no-repeat url("../img/info_1.svg");
+	}
+}

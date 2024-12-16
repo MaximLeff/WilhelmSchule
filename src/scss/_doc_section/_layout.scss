@@ -1,0 +1,32 @@
+.container {
+	margin: 0 auto;
+	padding-right: 50px;
+	// padding-right: 1.25rem;
+	padding-left: 50px;
+	// padding-left: 1.25rem;
+	max-width: 1340px;
+}
+
+header,
+footer {
+	flex: 0 0 auto;
+	width: 100%;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+}
+
+body [data-barba] {
+	display: flex;
+	flex: 1 0 auto;
+	flex-direction: column;
+	height: 100%;
+}
+footer {
+	margin-top: auto;
+}

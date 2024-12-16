@@ -1,0 +1,41 @@
+// px в rem.
+// 65px разделить на 16px (16px по умолчанию) = 4.0625rem
+
+html {
+	font-family: "Inter", sans-serif;
+	cursor: default;
+}
+
+.title {
+	&__first {
+		font-family: "DaysOne";
+		font-size: var(--fluid-45-55);
+		line-height: 1.5;
+		text-transform: uppercase;
+	}
+
+	&__second {
+		font-family: "DaysOne";
+		font-size: var(--fluid-24-28);
+		line-height: 1.36;
+		text-transform: uppercase;
+	}
+
+	&__third {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 1.22;
+	}
+}
+
+p {
+	font-size: 1rem;
+	line-height: 1.5;
+	& + p {
+		margin-top: 15px;
+	}
+}
+
+strong {
+	font-weight: 700;
+}
