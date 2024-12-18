@@ -1,3 +1,8 @@
+$laptop: 1280px;
+$tablet-xl: 1023px;
+$tablet: 767px;
+$mobile: 475px;
+
 :root {
 	--color-first: #B2E01E;
 	--color-second: #BAB7F1;
@@ -9,23 +14,37 @@
 
 	--color-error: #E00A0D;
 
+	--b-radius-first: 60px;
+	--b-radius-second: 10px;
+
 	--anim4: 0.4s ease-in-out;
 	--anim2: 0.2s ease-in-out;
 	--anim1: 0.1s ease;
 
-	/* @link https://utopia.fyi/clamp/calculator/?a=400,768 */
+	--side-offset: 50px;
+	--side-offset-second: 60px;
 
-	--fluid-45-55: clamp(45px, 34.1304px + 2.7174vw, 55px);
-	--fluid-24-28: clamp(24px, 19.6522px + 1.087vw, 28px);
+	--top-offset: 30px;
+	--top-offset-second: 60px;
+
+
+	--container-width: 1340px;
+
+
+	@media screen and (max-width: $tablet-xl) {
+		--side-offset: 30px;
+		--b-radius-first: 40px;
+		--side-offset-second: clamp(30px, -18.6348px + 10.2389vw, 60px);
+	}
+
+	// @media screen and (max-width: $mobile) {
+	// 	--side-offset: 15px;
+	// }
 }
-
-$laptop: 1280px;
-$tablet: 768px;
-$mobile: 425px;
 
 @mixin respond-to($media) {
 	// > $mobile
-	@if $media == mobi {
+	@if $media == mobile {
 		@media screen and (max-width: $mobile) {
 			@content;
 		}
@@ -33,6 +52,12 @@ $mobile: 425px;
 	// > $tablet
 	} @else if $media == tablet {
 		@media screen and (max-width: $tablet) {
+			@content;
+		}
+
+	// > $tablet
+	} @else if $media == tablet-xl {
+		@media screen and (max-width: $tablet-xl) {
 			@content;
 		}
 

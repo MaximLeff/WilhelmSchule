@@ -23,5 +23,7 @@
 @import "_doc_section/_header";
 @import "_doc_section/_footer";
 
-@import "_doc_section/_mixins/banner";
-
+// Components
+@import "components/banner";
+@import "components/grid";
+@import "components/test-level";

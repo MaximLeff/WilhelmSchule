@@ -27,6 +27,16 @@
 	color: var(--color-third);
 }
 
+// hover paws
+.header a {
+	@media (hover: hover) {
+		&:hover {
+			transform: scale(1);
+			cursor: url("../img/hover-paws_light.svg"), pointer;
+		}
+	}
+}
+
 .bg {
 	&__first {
 		background: center / cover no-repeat url("../img/bg_1.webp");
@@ -47,7 +57,7 @@
 
 .border-radius {
 	&__first {
-		border-radius: 60px;
+		border-radius: var(--b-radius-first);
 	}
 }
 
@@ -56,7 +66,7 @@
 	width: 100%;
 }
 
-section ul:not(.no-list) {
+section ul:not(.no-list, .levels) {
 	display: flex;
 	flex-direction: column;
 	padding-left: 30px;
@@ -67,7 +77,7 @@ section ul:not(.no-list) {
 		padding-left: 37px;
 		font-weight: 500;
 		font-size: 18px;
-		line-height: 1.5;
+		line-height: 1.4;
 
 		&::before {
 			content: "";
@@ -78,10 +88,19 @@ section ul:not(.no-list) {
 			height: 22px;
 			background: center / contain no-repeat url("../img/i-paws.svg");
 		}
+
+		@include respond-to(tablet-xl) {
+			font-size: 16px;
+			line-height: 1.5;
+		}
+	}
+
+	@include respond-to(tablet-xl) {
+		gap: 10px;
 	}
 }
 
-.text-arrow {
+i.text-arrow {
 	position: relative;
 	display: block;
 	width: max-content;
@@ -95,22 +114,47 @@ section ul:not(.no-list) {
 		padding-bottom: 23px;
 
 		img {
-			right: -37px;
-			top: 10px;
+			right: -43px;
+			top: 7px;
 			width: 27px;
 			height: 30px;
+
+			@include respond-to(tablet-xl) {
+				right: -32px;
+				width: 22px;
+			}
+		}
+	}
+
+	&__second {
+		padding-bottom: 23px;
+
+		img {
+			right: -83px;
+			top: 5px;
+			width: 105px;
+			height: 38px;
+
+			@include respond-to(tablet-xl) {
+				right: -55px;
+				top: 10px;
+				width: 65px;
+				height: 30px;
+			}
 		}
 	}
 }
 
 @keyframes info {
 	from {
-		transform: translateY(0px);
+		transform: translateY(0);
 	}
+
 	to {
 		transform: translateY(-5px);
 	}
 }
+
 .info {
 	font-family: "ShantellSans", sans-serif;
 	font-weight: 500;
@@ -122,10 +166,29 @@ section ul:not(.no-list) {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 30px 10px 50px 10px;
-		width: 183px;
+		padding: 30px 10px 50px;
+		width: 173px;
 		height: 213px;
 		text-align: center;
 		background: center / contain no-repeat url("../img/info_1.svg");
+
+		@include respond-to(tablet-xl) {
+			padding: 40px 10px 50px;
+			width: clamp(143px, 52.6471px + 11.7647vw, 173px);
+		}
+		@include respond-to(tablet) {
+			width: clamp(105px, 43.3959px + 12.9693vw, 143px);
+		}
+		@include respond-to(mobile) {
+			padding: 40px 5px 50px;
+		}
 	}
+
+	@include respond-to(tablet-xl) {
+		font-size: clamp(11px, -4.0588px + 1.9608vw, 16px);
+	}
+}
+
+section:not(.banner-wrap) + section[class] {
+	margin-top: 90px;
 }

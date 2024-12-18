@@ -14,6 +14,17 @@
 		background: #fff;
 		transition: var(--anim2);
 
+		@include respond-to(tablet) {
+			padding: 20px 33px;
+			font-size: 18px;
+			text-align: center;
+		}
+
+		@include respond-to(mobile) {
+			padding: 20px;
+			width: 100%;
+		}
+
 		@media (hover: hover) {
 			&:hover {
 				color: var(--color-first);
@@ -44,7 +55,8 @@
 		border: 2px solid var(--color-dark);
 		border-radius: 30px;
 		padding: 8px 15px;
-		width: 237px;
+		width: 100%;
+		max-width: 237px;
 		font-size: 12px;
 		line-height: 1.25;
 		text-transform: uppercase;
@@ -55,6 +67,10 @@
 			flex-shrink: 0;
 			width: 40px;
 			height: 40px;
+		}
+
+		@include respond-to(tablet) {
+			font-size: clamp(10px, 6.7577px + 0.6826vw, 12px);
 		}
 
 		@media (hover: hover) {
@@ -68,19 +84,37 @@
 	&-list {
 		position: relative;
 		z-index: 5;
+		height: min-content;
+		&--top {
+			.no-list {
+				top: unset;
+				bottom: 80%;
+			}
+			@media (hover: hover) {
+				&:hover {
+					.no-list {
+						bottom: 100%;
+						opacity: 1;
+						visibility: visible;
+						top: unset;
+					}
+				}
+			}
+		}
 
 		ul {
-			background: var(--color-dark);
-			color: var(--color-white);
 			position: absolute;
 			top: 80%;
 			z-index: -1;
-			opacity: 0;
-			transition: var(--anim2);
-			border-radius: 30px;
-			padding: 30px;
 			display: flex;
 			flex-direction: column;
+			border-radius: 30px;
+			padding: 30px;
+			color: var(--color-white);
+			background: var(--color-dark);
+			opacity: 0;
+			visibility: hidden;
+			transition: var(--anim2);
 			gap: 15px;
 		}
 
@@ -89,6 +123,68 @@
 				ul {
 					top: 100%;
 					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
+}
+
+.btn--burger {
+	display: none;
+
+	@include respond-to(tablet-xl) {
+		--line-offset: 2px;
+		--color: var(--color-first);
+		--color-active: var(--color-first);
+
+		position: relative;
+		z-index: 15;
+		display: flex;
+		width: 36px;
+		height: 24px;
+		cursor: pointer;
+
+		span {
+			position: absolute;
+			display: block;
+			margin-bottom: 2px;
+			width: 100%;
+			height: 2px;
+			background: var(--color);
+			transition: 0.4s;
+
+			&:nth-child(1) {
+				top: 0;
+			}
+
+			&:nth-child(2) {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+
+			&:nth-child(3) {
+				top: 100%;
+				transform: translateY(-100%);
+			}
+		}
+
+		&.active {
+			span {
+				top: 50%;
+				background: var(--color-active);
+				transform: translateY(-50%);
+
+				&:nth-child(1) {
+					transform: translateY(-50%) rotate(45deg);
+				}
+
+				&:nth-child(2) {
+					opacity: 0;
+				}
+
+				&:nth-child(3) {
+					transform: translateY(-50%) rotate(-45deg);
 				}
 			}
 		}

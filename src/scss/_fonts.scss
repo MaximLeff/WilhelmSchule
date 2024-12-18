@@ -9,16 +9,24 @@ html {
 .title {
 	&__first {
 		font-family: "DaysOne";
-		font-size: var(--fluid-45-55);
+		font-size: clamp(55px, 30.3846px + 2.4038vw, 65px);
 		line-height: 1.5;
 		text-transform: uppercase;
+		@include respond-to(tablet) {
+			font-size: clamp(45px, 28.7884px + 3.413vw, 55px);
+			line-height: 1;
+		}
 	}
 
 	&__second {
 		font-family: "DaysOne";
-		font-size: var(--fluid-24-28);
-		line-height: 1.36;
+		font-size: clamp(28px, 23.0769px + 0.4808vw, 30px);
+		line-height: 1.1;
 		text-transform: uppercase;
+		@include respond-to(tablet) {
+			font-size: clamp(24px, 17.5154px + 1.3652vw, 28px);
+			line-height: 1.2;
+		}
 	}
 
 	&__third {
@@ -29,9 +37,9 @@ html {
 }
 
 p {
-	font-size: 1rem;
+	font-size: clamp(14px, 10.7577px + 0.6826vw, 16px);
 	line-height: 1.5;
-	& + p {
+	&:not(.subtitle) + p {
 		margin-top: 15px;
 	}
 }

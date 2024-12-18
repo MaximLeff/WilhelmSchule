@@ -1,10 +1,14 @@
 .container {
 	margin: 0 auto;
-	padding-right: 50px;
-	// padding-right: 1.25rem;
-	padding-left: 50px;
-	// padding-left: 1.25rem;
-	max-width: 1340px;
+	padding-top: var(--side-offset-second);
+	padding-right: var(--side-offset-second);
+	padding-bottom: var(--side-offset-second);
+	padding-left: var(--side-offset-second);
+	max-width: var(--container-width);
+
+	&:not([class^="bg"]) {
+		max-width: calc(var(--container-width) + calc(var(--side-offset) * 2));
+	}
 }
 
 header,
@@ -27,6 +31,7 @@ body [data-barba] {
 	flex-direction: column;
 	height: 100%;
 }
+
 footer {
 	margin-top: auto;
 }

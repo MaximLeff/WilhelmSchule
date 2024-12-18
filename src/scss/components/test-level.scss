@@ -1,0 +1,131 @@
+.test-level {
+	overflow: hidden;
+
+	.container {
+		overflow: hidden;
+
+		@include respond-to(tablet-xl) {
+			padding: var(--top-offset-second) var(--side-offset);
+		}
+	}
+
+	&__text {
+		margin-bottom: 90px;
+		max-width: 600px;
+
+		[class^="title"] {
+			margin-bottom: 35px;
+			max-width: 480px;
+		}
+
+		.subtitle {
+			margin-bottom: 12px;
+			font-weight: 700;
+		}
+
+		p:not(.subtitle) {
+			max-width: 410px;
+		}
+
+		@include respond-to(laptop) {
+			margin-bottom: 60px;
+		}
+	}
+
+	.btn {
+		font-size: 12px;
+	}
+
+	&__bottom {
+		display: flex;
+
+		@include respond-to(laptop) {
+			flex-direction: column;
+			gap: 30px;
+		}
+	}
+
+	.levels {
+		counter-reset: slide-list;
+		display: flex;
+		flex-direction: row;
+		align-items: end;
+		margin-top: -250px;
+		margin-left: 45px;
+		font-family: "ShantellSans", sans-serif;
+		font-weight: 500;
+		text-transform: uppercase;
+
+		li {
+			--size-main: clamp(80px, -18.4615px + 9.6154vw, 120px);
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-left: calc(var(--size) * 0.21 * -1);
+			height: min-content;
+
+			img {
+				margin-bottom: calc(var(--size) / 6.66 * -1);
+				width: var(--size);
+				height: var(--size);
+			}
+
+			span {
+				margin-bottom: calc(var(--size) / 5 * -1);
+				font-size: calc(var(--size) / 3.84);
+			}
+
+			&:nth-child(1) {
+				// --size: 120px;
+				--size: calc(var(--size-main) * 1);
+			}
+
+			&:nth-child(2) {
+				// --size: 150px;
+				--size: calc(var(--size-main) * 1.25);
+			}
+
+			&:nth-child(3) {
+				// --size: 200px;
+				--size: calc(var(--size-main) * 1.66);
+			}
+
+			&:nth-child(4) {
+				// --size: 250px;
+				--size: calc(var(--size-main) * 2.09);
+			}
+
+			&:nth-child(5) {
+				// --size: 300px;
+				--size: calc(var(--size-main) * 2.5);
+			}
+
+			&:nth-child(6) {
+				// --size: 350px;
+				--size: calc(var(--size-main) * 2.92);
+			}
+
+			@include respond-to(laptop) {
+				--size-main: 86px;
+
+				margin-left: unset;
+			}
+
+			@include respond-to(tablet-xl) {
+				--size-main: clamp(34px, 3.9538px + 8.0123vw, 86px);
+			}
+		}
+
+		@include respond-to(laptop) {
+			margin-top: clamp(-100px, 0px + -7.8125vw, -60px);
+			margin-right: -80px;
+			margin-left: auto;
+		}
+
+		@include respond-to(tablet-xl) {
+			margin-top: clamp(-40px, 38.1679px + -10.1781vw, 0px);
+			margin-left: -10px;
+		}
+	}
+}
