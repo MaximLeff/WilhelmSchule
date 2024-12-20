@@ -1,0 +1,183 @@
+.online-courses {
+	.container {
+		@include respond-to(tablet) {
+			padding-left: unset;
+			padding-right: unset;
+		}
+	}
+	&__row {
+		display: grid;
+		grid-template-columns: clamp(462px, -340.4615px + 78.3654vw, 788px) 1fr;
+		gap: 21px;
+
+		@include respond-to(tablet-xl) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__col {
+		&:nth-child(1) {
+			[class^="title"] {
+				margin-bottom: 30px;
+				padding-left: 30px;
+			}
+		}
+	}
+
+	&__tabs {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+
+		@include respond-to(tablet) {
+			gap: 10px;
+		}
+	}
+
+	&__tab {
+		border-radius: var(--b-radius-first);
+		padding: 30px 30px 30px 60px;
+		background: var(--color-light);
+
+		@include respond-to(tablet) {
+			padding: 30px;
+		}
+
+		&-title {
+			display: flex;
+			align-items: center;
+			font-weight: 700;
+			font-size: 24px;
+			gap: 14px;
+
+			i {
+				display: none;
+				margin-left: auto;
+				width: 17px;
+				height: 10px;
+				background: center / contain no-repeat url("../img/i-faq-arrow.svg");
+				transition: var(--anim2);
+
+				@include respond-to(tablet-xl) {
+					display: block;
+				}
+			}
+
+			@include respond-to(tablet) {
+				font-size: 22px;
+			}
+			svg {
+				@include respond-to(tablet) {
+					width: 30px;
+					height: 30px;
+				}
+			}
+		}
+
+		&-text {
+			margin-top: 20px;
+
+			@include respond-to(tablet-xl) {
+				margin-top: unset;
+			}
+			@include respond-to(tablet) {
+				padding-left: 30px;
+				padding-right: 30px;
+			}
+		}
+
+		&-content {
+			display: none;
+			padding-right: 30px;
+
+			@include respond-to(tablet-xl) {
+				display: flex;
+				align-items: center;
+				margin-top: 20px;
+				gap: 15px 20px;
+			}
+			@include respond-to(tablet) {
+				flex-direction: column;
+				padding-right: unset;
+			}
+		}
+
+		&-image {
+			display: none;
+
+			@include respond-to(tablet-xl) {
+				display: block;
+				display: flex;
+				flex-shrink: 0;
+				align-items: center;
+				justify-content: center;
+				overflow: hidden;
+				border-radius: 60px;
+				width: 240px;
+				height: 230px;
+				background: var(--color-first);
+
+				img {
+					width: 80%;
+				}
+			}
+
+			@include respond-to(tablet) {
+				max-width: 315px;
+				width: 100%;
+				border-radius: 40px;
+			}
+		}
+
+		p {
+			max-width: 660px;
+		}
+	}
+
+	[tab-text-index] {
+		svg path {
+			transition: var(--anim2);
+		}
+
+		&.active {
+			svg {
+				transform-origin: bottom;
+				animation: wiggle_icon 0.5s cubic-bezier(0.52, -0.12, 0.44, 0.99);
+
+				path {
+					fill: var(--color-first);
+				}
+			}
+
+			i {
+				transform: rotateX(180deg);
+			}
+		}
+	}
+
+	&__images {
+		position: relative;
+		overflow: hidden;
+		border-radius: var(--b-radius-first);
+		width: 100%;
+		height: 100%;
+		background: var(--color-first);
+	}
+
+	[tab-image-index] {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 85%;
+		min-width: 450px;
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(0);
+		transition: var(--anim4);
+		transition-timing-function: cubic-bezier(0.5, -0.04, 0, 1.01);
+
+		&.active {
+			opacity: 1;
+			transform: translate(-50%, -50%) scale(1);
+		}
+	}
+}

@@ -35,3 +35,7 @@ body [data-barba] {
 footer {
 	margin-top: auto;
 }
+
+section:last-child {
+	margin-bottom: clamp(45px, -60.3754px + 22.1843vw, 110px);
+}

@@ -37,6 +37,14 @@
 	}
 }
 
+[cursor="paws-light"] {
+	cursor: url("../img/hover-paws_light.svg"), pointer;
+}
+
+[cursor="paws-dark"] {
+	cursor: url("../img/hover-paws_dark.svg"), pointer;
+}
+
 .bg {
 	&__first {
 		background: center / cover no-repeat url("../img/bg_1.webp");
@@ -176,9 +184,11 @@ i.text-arrow {
 			padding: 40px 10px 50px;
 			width: clamp(143px, 52.6471px + 11.7647vw, 173px);
 		}
+
 		@include respond-to(tablet) {
 			width: clamp(105px, 43.3959px + 12.9693vw, 143px);
 		}
+
 		@include respond-to(mobile) {
 			padding: 40px 5px 50px;
 		}
