@@ -5,7 +5,7 @@
 	font-family: "DaysOne", sans-serif;
 	cursor: url("../img/hover-paws_light.svg"), pointer;
 
-	&__first {
+	&--first {
 		border: 2px solid var(--color-dark);
 		border-radius: 30px;
 		padding: 25px 45px;
@@ -33,7 +33,7 @@
 		}
 	}
 
-	&__second {
+	&--second {
 		border-radius: 30px;
 		padding: 15px 30px;
 		font-size: 12px;
@@ -49,7 +49,7 @@
 		}
 	}
 
-	&__third {
+	&--third {
 		display: flex;
 		align-items: center;
 		border: 2px solid var(--color-dark);
@@ -80,12 +80,13 @@
 			}
 		}
 	}
+	
 
-	&-list {
+	&--list {
 		position: relative;
 		z-index: 5;
 		height: min-content;
-		&--top {
+		&-top {
 			.no-list {
 				top: unset;
 				bottom: 80%;

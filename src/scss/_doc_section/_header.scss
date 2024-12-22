@@ -17,6 +17,8 @@
 	&__logo {
 		margin-right: auto;
 		width: clamp(88px, 41.2443px + 12.4682vw, 137px);
+		max-height: 51px;
+		height: max-content;
 	}
 
 	nav {

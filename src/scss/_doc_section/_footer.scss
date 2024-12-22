@@ -1,3 +1,143 @@
 .footer {
+	color: var(--color-white);
 	background: var(--color-dark);
+
+	.container {
+		padding-bottom: 15px;
+	}
+
+	a {
+		cursor: url("../img/hover-paws_light.svg"), pointer;
+	}
+
+	&__grid {
+		display: grid;
+		justify-content: space-between;
+		grid-template-areas:
+			"logo group"
+			"tel group"
+			"socials group";
+		grid-template-columns: 1fr 1fr;
+
+		@include respond-to(tablet) {
+			grid-template-areas:
+				"logo"
+				"group"
+				"tel"
+				"socials";
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__logo {
+		grid-area: logo;
+		margin-bottom: 60px;
+		width: max-content;
+		height: max-content;
+		max-width: 270px;
+		max-height: 90px;
+	}
+
+	&__tel {
+		display: flex;
+		flex-direction: column;
+		grid-area: tel;
+		font-family: "DaysOne", sans-serif;
+		font-size: 25px;
+		gap: 5px;
+
+		@include respond-to(tablet) {
+			font-size: 20px;
+		}
+	}
+
+	&__socials {
+		display: flex;
+		grid-area: socials;
+		margin-top: 30px;
+		gap: 15px;
+
+		img {
+			@include respond-to(tablet) {
+				height: 48px;
+				font-size: 48px;
+			}
+		}
+	}
+
+	&__group {
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+		grid-area: group;
+		font-family: "DaysOne", sans-serif;
+		font-size: 24px;
+		text-align: right;
+
+		.btn {
+			margin-bottom: 30px;
+
+			@include respond-to(mobile) {
+				text-align: center;
+			}
+		}
+
+		@include respond-to(tablet) {
+			align-items: start;
+			margin-bottom: 60px;
+			font-size: 20px;
+			text-align: left;
+		}
+	}
+
+	&__menu {
+		display: flex;
+		flex-direction: column;
+		text-transform: uppercase;
+		gap: 15px;
+	}
+
+	.btn {
+		color: var(--color-dark);
+	}
+
+	&__partners {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-top: 95px;
+		width: 100%;
+
+		&-title {
+			margin-bottom: 30px;
+		}
+
+		img {
+			width: max-content;
+			height: max-content;
+			max-width: 140px;
+			max-height: 35px;
+			filter: invert(1) brightness(10);
+		}
+
+		&-list {
+			display: flex;
+			flex-wrap: wrap;
+			gap: clamp(30px, -18.6348px + 10.2389vw, 60px);
+			justify-content: center;
+		}
+	}
+
+	&__bottom {
+		margin-top: 95px;
+		border-top: 2px solid var(--color-white);
+		padding-top: 30px;
+
+		p {
+			font-weight: 500;
+			font-size: clamp(14px, 7.5154px + 1.3652vw, 18px);
+			text-align: center;
+		}
+	}
 }
