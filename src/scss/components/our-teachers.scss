@@ -1,0 +1,47 @@
+.our-teachers {
+	[class^="title"] {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	&__img {
+		background: var(--color-white);
+		border-radius: 100%;
+		overflow: hidden;
+		--size: clamp(167px, 113.5017px + 11.2628vw, 200px);
+		margin-bottom: 20px;
+
+		width: var(--size);
+		height: var(--size);
+
+		img {
+			height: 100%;
+			object-fit: cover;
+		}
+		&--first {
+			display: flex;
+			justify-content: center;
+			align-items: end;
+			svg {
+				width: calc(var(--size) - 50px);
+			}
+		}
+	}
+	&__slide {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 10px;
+		&--accent {
+			background: var(--color-first);
+		}
+	}
+	&__title {
+		font-weight: 700;
+		font-size: 24px;
+	}
+	&__text {
+		line-height: 1.5;
+		max-width: 290px;
+	}
+}

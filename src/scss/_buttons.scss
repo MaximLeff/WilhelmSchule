@@ -80,6 +80,33 @@
 			}
 		}
 	}
+
+	&--fourth {
+		border: 2px solid var(--color-dark);
+		border-radius: 30px;
+		padding: 25px 45px;
+		font-size: 12px;
+		text-transform: uppercase;
+		background: #fff;
+		transition: var(--anim2);
+
+		@include respond-to(tablet) {
+			padding: 20px 33px;
+			text-align: center;
+		}
+
+		@include respond-to(mobile) {
+			padding: 20px;
+			width: 100%;
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				color: var(--color-first);
+				background: var(--color-dark);
+			}
+		}
+	}
 	
 
 	&--list {
@@ -188,6 +215,30 @@
 					transform: translateY(-50%) rotate(-45deg);
 				}
 			}
+		}
+	}
+}
+
+.swiper-button {
+	&-wrapper {
+		margin-left: auto;
+		display: flex;
+		justify-content: end;
+		gap: 30px;
+		margin-top: 30px;
+		@include respond-to(mobile) {
+			justify-content: center;
+			margin-top: 15px;
+		}
+	}
+	&-disabled {
+		opacity: 0.5;
+	}
+	&-prev,
+	&-next {
+		svg {
+			width: clamp(41px, -12.4983px + 11.2628vw, 74px);
+			height: max-content;
 		}
 	}
 }

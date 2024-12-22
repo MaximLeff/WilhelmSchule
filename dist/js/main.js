@@ -44,4 +44,66 @@ jQuery(document).ready(function ($) {
 			$(`.online-courses__image[tab-image-index=${index}]`).addClass('active')
 		}
 	})
+
+	$('.faq__tab').click(function() {
+		if(!$(this).hasClass('active')){
+			$('.faq__tab.active').removeClass('active')
+			$(this).addClass('active')
+
+			$('.faq__tab .faq__tab-content').slideUp(200);
+			$(this).find('.faq__tab-content').slideDown(200, function () {
+				$(this).css({
+					display: "flex"
+				})
+			});
+		}
+	})
+
+	const howLong = new Swiper('.how-long__slides', {
+		slidesPerView: 1,
+		spaceBetween: 15,
+
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		breakpoints: {
+			500: {
+				slidesPerView: 1.5,
+				spaceBetween: 20,
+			},
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 30,
+			},
+			1024: {
+				slidesPerView: 3,
+				spaceBetween: 20,
+			},
+		},
+	});
+
+	const ourTeachers = new Swiper('.our-teachers__slides', {
+		slidesPerView: 1,
+		spaceBetween: 15,
+
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		breakpoints: {
+			500: {
+				slidesPerView: 1.5,
+				spaceBetween: 20,
+			},
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 30,
+			},
+			1024: {
+				slidesPerView: 3,
+				spaceBetween: 20,
+			},
+		},
+	});
 });

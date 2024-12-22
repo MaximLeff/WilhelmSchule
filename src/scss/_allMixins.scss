@@ -5,10 +5,9 @@
 
 @mixin font-face($name, $file, $weight: 400, $style: normal) {
 	@font-face {
-		src:
-			local("#{$file}"),
-			url("../fonts/#{$file}.woff2") format("woff2"),
-			url("../fonts/#{$file}.woff") format("woff");
+		src: local("#{$file}"),
+		url("../fonts/#{$file}.woff2") format("woff2"),
+		url("../fonts/#{$file}.woff") format("woff");
 		font-family: "#{$name}";
 		font-weight: $weight;
 		font-style: $style;
@@ -27,6 +26,7 @@
 	&--first {
 		color: var(--color-third);
 	}
+
 	&--second {
 		color: var(--color-first);
 	}
@@ -204,6 +204,34 @@ i.text-arrow {
 	}
 }
 
-section:not(.banner-wrap) + section[class] {
+section:not(.banner-wrap)+section[class] {
 	margin-top: 90px;
+}
+
+.slides {
+	&__item {
+		border-radius: var(--b-radius-first);
+		background: var(--color-light);
+		height: auto;
+		padding: clamp(30px, -18.6348px + 10.2389vw, 60px);
+	}
+
+	.swiper {
+		@include respond-to(tablet) {
+
+
+			margin-left: calc(var(--side-offset-second) * -1);
+			margin-right: calc(var(--side-offset-second) * -1);
+			padding-left: 30px;
+			padding-right: 30px;
+
+		
+		}
+		@include respond-to(mobile) {
+		
+				padding-left: 15px;
+				padding-right: 15px;
+		
+		}
+	}
 }
