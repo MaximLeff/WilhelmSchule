@@ -173,6 +173,7 @@ i.text-arrow {
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 1.32;
+	flex-shrink: 0;
 	animation: info 1.5s infinite alternate-reverse ease-in-out;
 
 	&__first {
@@ -196,6 +197,25 @@ i.text-arrow {
 
 		@include respond-to(mobile) {
 			padding: 40px 5px 50px;
+		}
+	}
+
+	&__second {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 50px 30px 60px;
+		width: 190px;
+		height: 200px;
+		text-align: center;
+		background: center / contain no-repeat url("../img/info_2.svg");
+
+		@include respond-to(tablet-xl) {
+			width: clamp(150px, 30px + 15.625vw, 190px);
+		}
+		@include respond-to(tablet) {
+			width: clamp(130px, 97.5768px + 6.8259vw, 150px);
+			padding: 50px 20px 60px;
 		}
 	}
 

@@ -1,0 +1,89 @@
+.gift {
+	padding-top: 80px;
+	padding-bottom: 30px;
+
+	overflow: hidden;
+	&__row {
+		display: flex;
+		align-items: center;
+		gap: clamp(20px, -300px + 25vw, 60px);
+
+		@include respond-to(tablet-xl) {
+			flex-direction: column-reverse;
+		}
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+
+		.btn {
+			margin-top: 30px;
+			@include respond-to(tablet) {
+				margin-top: unset;
+			}
+		}
+	}
+
+	&__img {
+		display: flex;
+		flex-shrink: 0;
+
+		img {
+			z-index: 5;
+			margin-top: auto;
+
+			&:nth-child(1) {
+				@include respond-to(tablet) {
+					width: clamp(160px, -70.7509px + 44.3686vw, 270px);
+				}
+			}
+			&:nth-child(2) {
+				z-index: 0;
+				margin-left: -80px;
+				@include respond-to(tablet) {
+					margin-left: -50px;
+					width: clamp(170px, 15.9898px + 32.4232vw, 265px);
+				}
+				
+			}
+		}
+
+		@include respond-to(laptop) {
+			margin-left: clamp(-160px, -800px + 62.5vw, 0px);
+		}
+		@include respond-to(tablet-xl) {
+			margin-left: auto;
+		}
+		@include respond-to(tablet) {
+			align-self: flex-start;
+			margin-left: clamp(-40px, -190px + 40vw, 0px);
+		}
+	}
+
+	.info {
+		margin-top: -50px;
+		margin-left: -35px;
+		@include respond-to(laptop) {
+			margin-left: -45px;
+		}
+		@include respond-to(tablet-xl) {
+			margin-left: -30px;
+		}
+		@include respond-to(tablet) {
+			margin-left: -20px;
+		}
+	}
+
+	@include respond-to(laptop) {
+		margin-right: calc(var(--side-offset-second) * -1);
+		margin-left: calc(var(--side-offset-second) * -1);
+		padding-top: clamp(65px, 5px + 5.8594vw, 80px);
+	}
+
+	@include respond-to(tablet) {
+		padding-top: 40px;
+		padding-bottom: 5px;
+	}
+}

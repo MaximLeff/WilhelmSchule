@@ -1160,6 +1160,8 @@ i.text-arrow__second img {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.32;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   animation: info 1.5s infinite alternate-reverse ease-in-out;
 }
 .info__first {
@@ -1177,6 +1179,22 @@ i.text-arrow__second img {
   height: 213px;
   text-align: center;
   background: center/contain no-repeat url("../img/info_1.svg");
+}
+.info__second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 50px 30px 60px;
+  width: 190px;
+  height: 200px;
+  text-align: center;
+  background: center/contain no-repeat url("../img/info_2.svg");
 }
 
 section:not(.banner-wrap) + section[class] {
@@ -2255,6 +2273,53 @@ section:last-child {
 .our-partners__item img {
   max-height: clamp(35px, -25px + 7.8125vw, 55px);
 }
+
+.gift {
+  padding-top: 80px;
+  padding-bottom: 30px;
+  overflow: hidden;
+}
+.gift__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: clamp(20px, -300px + 25vw, 60px);
+}
+.gift__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+}
+.gift__text .btn {
+  margin-top: 30px;
+}
+.gift__img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.gift__img img {
+  z-index: 5;
+  margin-top: auto;
+}
+.gift__img img:nth-child(2) {
+  z-index: 0;
+  margin-left: -80px;
+}
+.gift .info {
+  margin-top: -50px;
+  margin-left: -35px;
+}
 @media screen and (max-width: 1280px) {
   .test-level__text {
     margin-bottom: 60px;
@@ -2274,6 +2339,17 @@ section:last-child {
     margin-top: clamp(-100px, 0px - 7.8125vw, -60px);
     margin-right: -80px;
     margin-left: auto;
+  }
+  .gift__img {
+    margin-left: clamp(-160px, -800px + 62.5vw, 0px);
+  }
+  .gift .info {
+    margin-left: -45px;
+  }
+  .gift {
+    margin-right: calc(var(--side-offset-second) * -1);
+    margin-left: calc(var(--side-offset-second) * -1);
+    padding-top: clamp(65px, 5px + 5.8594vw, 80px);
   }
 }
 @media screen and (max-width: 1023px) {
@@ -2302,6 +2378,9 @@ section:last-child {
   .info__first {
     padding: 40px 10px 50px;
     width: clamp(143px, 52.6471px + 11.7647vw, 173px);
+  }
+  .info__second {
+    width: clamp(150px, 30px + 15.625vw, 190px);
   }
   .info {
     font-size: clamp(11px, -4.0588px + 1.9608vw, 16px);
@@ -2553,6 +2632,18 @@ section:last-child {
             justify-content: space-between;
     position: relative;
   }
+  .gift__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .gift__img {
+    margin-left: auto;
+  }
+  .gift .info {
+    margin-left: -30px;
+  }
 }
 @media screen and (max-width: 767px) {
   .title__first {
@@ -2565,6 +2656,10 @@ section:last-child {
   }
   .info__first {
     width: clamp(105px, 43.3959px + 12.9693vw, 143px);
+  }
+  .info__second {
+    width: clamp(130px, 97.5768px + 6.8259vw, 150px);
+    padding: 50px 20px 60px;
   }
   .slides .swiper {
     margin-left: calc(var(--side-offset-second) * -1);
@@ -2743,6 +2838,28 @@ section:last-child {
   }
   .our-partners__item {
     padding: clamp(15px, -9.3174px + 5.1195vw, 30px) 30px;
+  }
+  .gift__text .btn {
+    margin-top: unset;
+  }
+  .gift__img img:nth-child(1) {
+    width: clamp(160px, -70.7509px + 44.3686vw, 270px);
+  }
+  .gift__img img:nth-child(2) {
+    margin-left: -50px;
+    width: clamp(170px, 15.9898px + 32.4232vw, 265px);
+  }
+  .gift__img {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin-left: clamp(-40px, -190px + 40vw, 0px);
+  }
+  .gift .info {
+    margin-left: -20px;
+  }
+  .gift {
+    padding-top: 40px;
+    padding-bottom: 5px;
   }
 }
 @media screen and (max-width: 475px) {
