@@ -1,30 +1,41 @@
 .how-long {
-	[class^=title] {
+	font-weight: 500;
+
+	[class^="title"] {
 		margin-bottom: 20px;
+		padding-left: 30px;
 		max-width: 570px;
+
+		@include respond-to(tablet) {
+			padding-left: unset;
+		}
 	}
+
 	&__slide {
 		&--accent {
 			background: var(--color-first);
 		}
 	}
-	font-weight: 500;
+
 	&__content {
 		&-top {
 			&-title {
+				font-family: "DaysOne", sans-serif;
 				font-size: 140px;
-				font-family: "DaysOne", sans-serif;
-				color: var(--color-first);
 				line-height: 0.8;
+				color: var(--color-first);
 			}
+
 			&-subtitle {
-				font-size: 30px;
 				font-family: "DaysOne", sans-serif;
+				font-size: 30px;
 			}
 		}
+
 		&-bottom {
 			margin-top: 30px;
 		}
+
 		&-top,
 		&-bottom {
 			max-width: 258px;

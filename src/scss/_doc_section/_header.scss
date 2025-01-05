@@ -1,6 +1,8 @@
 .header {
 	z-index: 100;
 	background: var(--color-dark);
+	position: fixed;
+	top: 0;
 
 	.container {
 		display: flex;

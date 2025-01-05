@@ -1,34 +1,43 @@
 .our-partners {
 	.container {
+		padding-top: unset;
+		padding-bottom: unset;
+
 		@include respond-to(tablet) {
-			padding-left: 30px;
 			padding-right: 30px;
+			padding-left: 30px;
 		}
 	}
+
 	[class^="title"] {
-		text-align: center;
 		margin-bottom: 30px;
+		text-align: center;
 	}
+
 	&__items {
 		display: flex;
 		flex-wrap: wrap;
-		gap: clamp(15px, -9.3174px + 5.1195vw, 30px);
 		align-items: center;
 		justify-content: center;
+		gap: clamp(15px, -9.3174px + 5.1195vw, 30px);
 	}
+
 	&__item {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		border: 2px solid var(--color-dark);
 		border-radius: 60px;
 		padding: clamp(30px, -60px + 11.7188vw, 60px);
-		border: 2px solid var(--color-dark);
+
 		img {
 			max-height: clamp(35px, -25px + 7.8125vw, 55px);
+
 			@include respond-to(tablet) {
 				max-height: clamp(25px, 8.7884px + 3.413vw, 35px);
 			}
 		}
+
 		@include respond-to(tablet) {
 			padding: clamp(15px, -9.3174px + 5.1195vw, 30px) 30px;
 		}

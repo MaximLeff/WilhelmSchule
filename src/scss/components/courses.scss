@@ -1,0 +1,170 @@
+.courses {
+	margin-right: -60px;
+	margin-left: -60px;
+
+	&__slide {
+		border-radius: 60px;
+		padding: 60px 30px 30px;
+		box-shadow: 0 4px 10px 0 rgba(45, 42, 51, 0.3);
+		background: var(--color-white);
+		opacity: 0.85;
+		transition: opacity var(--anim2);
+
+		[class^="title"] {
+			margin-bottom: 10px;
+		}
+
+		@include respond-to(tablet-xl) {
+			border-radius: 40px;
+			padding: 30px;
+		}
+
+		@include respond-to(mobile) {
+			padding: 30px 20px;
+		}
+	}
+
+	&__slider {
+		padding-top: 5px;
+		padding-right: 30px;
+		padding-bottom: 15px;
+		padding-left: 30px;
+
+		@include respond-to(laptop) {
+			padding-right: 60px;
+			padding-left: 60px;
+		}
+	}
+
+	&__tags {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 45px;
+		gap: 20px;
+
+		span {
+			border-radius: 10px;
+			padding: 5px 15px;
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 1.2;
+			color: var(--color-third);
+			background: var(--color-light);
+
+			@include respond-to(mobile) {
+				font-size: 12px;
+			}
+		}
+
+		@include respond-to(mobile) {
+			margin-bottom: 35px;
+			gap: 5px;
+		}
+	}
+
+	&__row {
+		display: grid;
+		align-items: center;
+		grid-template-columns: 180px 1fr;
+		line-height: 24px;
+		gap: 20px;
+
+		&-title {
+			border-radius: 15px;
+			padding: 5px 15px;
+			width: max-content;
+			background: var(--color-first);
+
+			@include respond-to(mobile) {
+				padding: 3px 15px;
+			}
+		}
+
+		& + .courses__row {
+			margin-top: 5px;
+		}
+
+		@include respond-to(mobile) {
+			grid-template-columns: 150px 1fr;
+			font-size: 14px;
+		}
+	}
+
+	&__price {
+		margin-top: 30px;
+		margin-bottom: 45px;
+
+		p:nth-child(2) {
+			margin-top: 10px;
+			padding-left: 15px;
+			font-family: "DaysOne", serif;
+			font-size: 24px;
+			text-transform: uppercase;
+			color: var(--color-third);
+		}
+
+		@include respond-to(mobile) {
+			margin-bottom: 30px;
+		}
+	}
+
+	.swiper {
+		&-wrapper {
+			align-items: end;
+		}
+
+		&-slide {
+			max-width: 447px;
+
+			&-active {
+				opacity: 1;
+			}
+		}
+
+		&-button-wrapper {
+			display: none;
+			margin-top: 20px;
+
+			@include respond-to(tablet) {
+				display: flex;
+				justify-content: center;
+			}
+		}
+	}
+
+	.text-arrow {
+		margin-top: 30px;
+		margin-right: 20px;
+		margin-bottom: -20px;
+		margin-left: auto;
+
+		img {
+			left: -42px;
+			right: unset;
+			top: -18px;
+			width: 30px;
+			transform-origin: bottom right;
+			animation: var(--wiggle);
+
+			@include respond-to(mobile) {
+				top: -12px;
+				width: 22px;
+			}
+		}
+
+		@include respond-to(mobile) {
+			margin-top: 20px;
+			margin-right: 45px;
+			font-size: 14px;
+		}
+	}
+
+	.btn {
+		width: 100%;
+		text-align: center;
+
+		&--list {
+			width: 100%;
+		}
+	}
+}

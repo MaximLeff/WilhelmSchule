@@ -1,0 +1,253 @@
+.course-program {
+	overflow: hidden;
+
+	[class^="title"] {
+		margin-bottom: 15px;
+	}
+
+	.btn {
+		margin-top: auto;
+		width: 100%;
+		max-width: 250px;
+		text-align: center;
+
+		&--list {
+			width: 100%;
+			max-width: 250px;
+
+			@include respond-to(mobile) {
+				max-width: 100%;
+			}
+		}
+
+		@include respond-to(mobile) {
+			max-width: 100%;
+		}
+	}
+
+	&__text {
+		position: relative;
+		z-index: 10;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		max-width: 530px;
+
+		p {
+			display: flex;
+			flex: 1;
+			align-items: center;
+			gap: 10px;
+
+			span {
+				width: 34px;
+				height: 34px;
+				background: center / contain no-repeat url("../img/i-paws.svg");
+				transform: rotate(35deg);
+
+				@include respond-to(tablet-xl) {
+					width: 25px;
+					height: 25px;
+				}
+			}
+
+			@include respond-to(laptop) {
+				max-width: 400px;
+			}
+
+			@include respond-to(tablet-xl) {
+				max-width: 460px;
+			}
+		}
+
+		@include respond-to(laptop) {
+			max-width: unset;
+		}
+	}
+
+	&__image {
+		position: relative;
+		margin-top: -40px;
+		width: 100%;
+		max-width: 614px;
+
+		.text-arrow.text-arrow__second {
+			position: absolute;
+			left: 20px;
+			bottom: -35px;
+
+			img {
+				right: -60px;
+				top: -35px;
+				width: 60px;
+				height: 30px;
+				transform-origin: bottom left;
+				animation: var(--wiggle);
+
+				@include respond-to(tablet-xl) {
+					right: -45px;
+					top: -30px;
+					width: 50px;
+				}
+			}
+
+			@include respond-to(laptop) {
+				left: 90px;
+				bottom: 25px;
+			}
+
+			@include respond-to(tablet-xl) {
+				left: 30px;
+				bottom: -20px;
+				font-size: 14px;
+			}
+
+			@include respond-to(tablet) {
+				left: clamp(-10px, -59.5627px + 11.6618vw, 30px);
+				bottom: clamp(-25px, 24.2595px + -6.414vw, -3px);
+			}
+		}
+
+		img {
+			position: absolute;
+			left: 0;
+			top: 0;
+
+			&:nth-child(1) {
+				top: -80px;
+				z-index: 5;
+				width: 365px;
+				height: 345px;
+
+				@include respond-to(tablet-xl) {
+					top: -75px;
+					width: 295px;
+				}
+
+				@include respond-to(tablet) {
+					top: clamp(-110px, -153.3673px + 10.2041vw, -75px);
+					width: clamp(185px, 48.7026px + 32.07vw, 295px);
+				}
+			}
+
+			&:nth-child(2) {
+				left: unset;
+				right: -80px;
+				top: -100px;
+				width: 433px;
+				height: 433px;
+
+				@include respond-to(tablet-xl) {
+					right: -100px;
+					top: -70px;
+					height: 373px;
+				}
+
+				@include respond-to(tablet) {
+					right: clamp(-170px, -256.7347px + 20.4082vw, -100px);
+					top: clamp(-70px, 3.8892px + -9.621vw, -37px);
+					height: clamp(225px, 39.1399px + 43.7318vw, 375px);
+				}
+			}
+
+			&:nth-child(3) {
+				left: 55px;
+				top: -55px;
+				z-index: 10;
+				width: 605px;
+				height: 420px;
+
+				@include respond-to(tablet-xl) {
+					left: unset;
+					right: -34px;
+					top: -15px;
+					width: 475px;
+					height: 330px;
+				}
+
+				@include respond-to(tablet) {
+					right: clamp(-38px, -42.9563px + 1.1662vw, -34px);
+					width: clamp(295px, 71.9679px + 52.4781vw, 475px);
+					height: clamp(220px, 83.7026px + 32.07vw, 330px);
+				}
+			}
+		}
+
+		@include respond-to(laptop) {
+			position: absolute;
+			right: clamp(0px, -280px + 27.3438vw, 70px);
+			height: 100%;
+		}
+
+		@include respond-to(tablet-xl) {
+			position: relative;
+			right: unset;
+			margin-top: -120px;
+			margin-left: auto;
+			height: clamp(210px, 117.07px + 21.8659vw, 285px);
+			max-width: 485px;
+		}
+
+		@include respond-to(tablet) {
+			margin-top: -80px;
+			max-width: clamp(290px, 17.4052px + 64.1399vw, 510px);
+		}
+
+		@include respond-to(mobile) {
+			margin-top: 40px;
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		align-items: center;
+		margin-top: auto;
+		padding-top: 60px;
+		gap: 50px;
+
+		p {
+			font-family: "ShantellSans", sans-serif;
+
+			@include respond-to(tablet-xl) {
+				font-size: 14px;
+			}
+		}
+
+		@include respond-to(laptop) {
+			width: 100%;
+			gap: 15px;
+		}
+
+		@include respond-to(tablet-xl) {
+			flex-direction: column;
+			align-items: center;
+			width: 250px;
+		}
+
+		@include respond-to(mobile) {
+			padding-top: 25px;
+			width: 100%;
+		}
+	}
+
+	&__wrap {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		padding-right: 60px;
+		padding-left: 60px;
+
+		@include respond-to(tablet-xl) {
+			flex-direction: column;
+			padding-right: 30px;
+			padding-left: 30px;
+		}
+	}
+
+	@include respond-to(laptop) {
+		> .container {
+			padding-right: unset;
+			padding-left: unset;
+		}
+	}
+}

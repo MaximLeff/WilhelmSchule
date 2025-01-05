@@ -1,0 +1,376 @@
+.training {
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+		padding-bottom: unset;
+		gap: 20px;
+
+		@include respond-to(tablet) {
+			gap: 10px;
+		}
+
+		@include respond-to(mobile) {
+			padding-right: unset;
+			padding-left: unset;
+		}
+	}
+
+	[class^="title"] {
+		margin-bottom: 30px;
+		padding-left: 20px;
+
+		@include respond-to(tablet-xl) {
+			margin-right: auto;
+			margin-bottom: unset;
+		}
+	}
+
+	&__card {
+		position: relative;
+		border-radius: var(--b-radius-first);
+		padding: 60px;
+		width: calc(33.3% - 13px);
+		background: var(--color-light);
+
+		img {
+			position: absolute;
+
+			@include respond-to(tablet-xl) {
+				position: relative;
+
+				// right: unset !important;
+				// top: unset !important;
+				// bottom: unset !important;
+				// margin-top: unset !important;
+			}
+
+			@include respond-to(tablet) {
+				position: absolute;
+			}
+		}
+
+		&:nth-child(1) {
+			padding: unset;
+			background: unset;
+
+			.training__card-wrap {
+				position: relative;
+				flex-grow: 1;
+				border-radius: var(--b-radius-first);
+				padding: 60px;
+				background: var(--color-light);
+
+				img {
+					right: 55px;
+					top: 60px;
+					width: 100%;
+					height: max-content;
+					max-width: clamp(140px, 30vw, 190px);
+					max-height: 140px;
+
+					@include respond-to(laptop) {
+						top: unset;
+						bottom: 40px;
+					}
+
+					@include respond-to(tablet-xl) {
+						right: unset;
+						bottom: unset;
+					}
+
+					@include respond-to(tablet) {
+						right: 30px;
+						top: 15px;
+					}
+				}
+
+				p {
+					&:nth-child(1) {
+						padding-right: 130px;
+
+						@include respond-to(laptop) {
+							padding-right: unset;
+						}
+
+						@include respond-to(tablet) {
+							padding-right: 140px;
+						}
+					}
+
+					&:nth-child(2) {
+						padding-right: 210px;
+
+						@include respond-to(laptop) {
+							padding-right: 160px;
+						}
+
+						@include respond-to(tablet-xl) {
+							padding-right: unset;
+						}
+
+						@include respond-to(tablet) {
+							max-width: 260px;
+						}
+
+						@include respond-to(mobile) {
+							max-width: clamp(300px, 193.3333px + 26.6667vw, 320px);
+						}
+					}
+				}
+
+				@include respond-to(laptop) {
+					padding: 60px 60px 110px;
+				}
+
+				@include respond-to(tablet-xl) {
+					display: flex;
+					flex-direction: row-reverse;
+					align-items: center;
+					padding: 60px 30px;
+					gap: 30px;
+				}
+
+				@include respond-to(tablet) {
+					padding: 30px;
+				}
+			}
+
+			@include respond-to(laptop) {
+				display: flex;
+				flex-direction: column;
+				gap: 15px;
+			}
+		}
+
+		&:nth-child(1),
+		&:nth-child(2) {
+			width: calc(50% - 10px);
+
+			@include respond-to(tablet-xl) {
+				width: 100%;
+			}
+		}
+
+		&:nth-child(2) {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			img {
+				right: 50px;
+				top: 50%;
+				width: 100%;
+				height: max-content;
+				max-width: 198px;
+				max-height: 124px;
+				transform: translateY(-50%);
+
+				@include respond-to(laptop) {
+					position: relative;
+					right: unset;
+					top: unset;
+					transform: unset;
+				}
+
+				@include respond-to(tablet) {
+					margin-top: unset;
+					width: clamp(124px, 30vw, 198px);
+					max-height: max-content;
+				}
+			}
+
+			p {
+				padding-right: 240px;
+
+				@include respond-to(laptop) {
+					padding-right: unset;
+				}
+			}
+
+			@include respond-to(laptop) {
+				flex-direction: column-reverse;
+				align-items: end;
+				justify-content: start;
+				padding: 60px;
+				gap: 30px;
+			}
+
+			@include respond-to(tablet-xl) {
+				flex-direction: row;
+				align-items: center;
+			}
+
+			@include respond-to(tablet) {
+				flex-direction: column-reverse;
+				align-items: start;
+				padding: 30px;
+			}
+		}
+
+		&:nth-child(3) {
+			img {
+				right: 45px;
+				top: 35px;
+				width: clamp(104px, 48.6918px + 11.6438vw, 138px);
+				height: 115px;
+
+				@include respond-to(tablet-xl) {
+					right: unset;
+					top: unset;
+				}
+
+				@include respond-to(tablet) {
+					top: 35px;
+				}
+			}
+
+			p {
+				&:nth-child(1) {
+					padding-right: 130px;
+
+					@include respond-to(tablet-xl) {
+						padding-right: unset;
+					}
+
+					@include respond-to(tablet) {
+						padding-top: clamp(20px, -45.0685px + 13.6986vw, 60px);
+						padding-right: unset;
+						padding-left: clamp(120px, 54.9315px + 13.6986vw, 160px);
+					}
+				}
+			}
+
+			@include respond-to(tablet) {
+				justify-content: start;
+			}
+		}
+
+		&:nth-child(4) {
+			img {
+				right: 45px;
+				top: 35px;
+				margin-left: auto;
+				width: 100%;
+				height: max-content;
+				max-width: 240px;
+				max-height: 143px;
+
+				@include respond-to(tablet-xl) {
+					top: 50%;
+					transform: translateY(-50%);
+				}
+
+				@include respond-to(tablet) {
+					position: relative;
+					right: unset;
+					top: unset;
+					width: 50%;
+					transform: unset;
+				}
+
+				@include respond-to(mobile) {
+					margin-right: -25px;
+				}
+			}
+
+			p {
+				&:nth-child(1) {
+					padding-top: 90px;
+					padding-right: 30px;
+
+					@include respond-to(tablet-xl) {
+						padding-top: unset;
+						padding-right: unset;
+					}
+				}
+			}
+
+			@include respond-to(mobile) {
+				gap: 15px;
+			}
+		}
+
+		&:nth-child(5) {
+			img {
+				right: 27px;
+				top: 48px;
+				width: 100%;
+				height: max-content;
+				max-width: clamp(103px, -16.9659px + 25.256vw, 177px);
+				max-height: 140px;
+
+				@include respond-to(laptop) {
+					position: relative;
+					right: unset;
+					top: unset;
+				}
+
+				@include respond-to(tablet-xl) {
+					transform: scaleX(-1);
+				}
+			}
+
+			p {
+				&:nth-child(1) {
+					padding-top: 90px;
+					padding-right: 80px;
+
+					@include respond-to(laptop) {
+						margin-right: auto;
+						padding-top: unset;
+						padding-right: unset;
+						max-width: 480px;
+					}
+				}
+			}
+
+			@include respond-to(laptop) {
+				display: flex;
+				flex-grow: 1;
+				align-items: center;
+				padding: 30px 60px;
+				gap: 30px;
+			}
+
+			@include respond-to(tablet-xl) {
+				padding: 60px;
+			}
+
+			@include respond-to(tablet) {
+				padding: 30px;
+			}
+		}
+
+		&--second {
+			background: var(--color-second);
+		}
+
+		&--third {
+			color: var(--color-white);
+			background: var(--color-dark);
+		}
+
+		&--fourth {
+			background: var(--color-first);
+		}
+
+		@include respond-to(tablet) {
+			padding: 30px;
+		}
+
+		@include respond-to(tablet-xl) {
+			display: flex;
+			align-items: center;
+			width: 100%;
+			gap: 30px;
+
+			&:nth-child(odd):not(:first-child) {
+				flex-direction: row-reverse;
+			}
+		}
+
+		@include respond-to(laptop) {
+			width: calc(50% - 10px);
+		}
+	}
+}
