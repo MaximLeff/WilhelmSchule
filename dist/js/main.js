@@ -29,7 +29,7 @@ jQuery(document).ready(function ($) {
 		}
 	});
 
-	
+
 
 	const howLong = new Swiper('.how-long__slides', {
 		slidesPerView: 1,
@@ -98,7 +98,7 @@ jQuery(document).ready(function ($) {
 	});
 
 	if ($(window).width() > 768) {
-		const scene = $('#parallax')[0];
+		const scene = $('[data=parallax]')[0];
 		if (scene) {
 			const parallaxInstance = new Parallax(scene);
 		}
@@ -138,7 +138,7 @@ jQuery(document).ready(function ($) {
 		$(`.online-courses__col [tab-image-index=${index + 1}]`).addClass('active');
 	}
 
-	if (window.innerWidth > 1280) {
+	if (window.innerWidth > 1280 && $('.online-courses')[0]) {
 		gsap.registerPlugin(ScrollTrigger);
 
 		const tl = gsap.timeline({
@@ -191,4 +191,18 @@ jQuery(document).ready(function ($) {
 			}
 		});
 	}
+
+	$('.programs .levels li').click(function () {
+		if (!$(this).hasClass('active')) {
+			let element = $(this);
+			let index = $(this).index() + 1;
+			$('.programs .levels li').removeClass('active');
+
+			$('.levels-content .levels-content__items.active').removeClass('active').fadeOut(400, function () {
+				$(`.levels-content .levels-content__items:nth-child(${index})`).fadeIn(400, 'linear').addClass('active');
+				$('.programs .levels li').removeClass('active');
+				$(element).addClass('active');
+			});
+		}
+	});
 });

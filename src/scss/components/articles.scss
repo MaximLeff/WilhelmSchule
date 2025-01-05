@@ -1,0 +1,35 @@
+.page-articles .articles.container {
+	margin-top: 35px;
+
+	@include respond-to(mobile) {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+}
+
+.articles {
+	padding-top: unset;
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid var(--color-light);
+		border-radius: var(--b-radius-first);
+		padding: 30px;
+		gap: 30px;
+
+		p {
+			line-height: 1.5;
+		}
+
+		img {
+			border-radius: calc(var(--b-radius-first) - 30px);
+		}
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+		gap: 20px;
+	}
+}

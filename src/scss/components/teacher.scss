@@ -1,0 +1,132 @@
+.about-teacher {
+	.container {
+		display: grid;
+		grid-template-columns: 40% 60%;
+		gap: 15px;
+
+		@include respond-to(laptop) {
+			padding-right: 50px;
+			padding-left: 50px;
+		}
+
+		@include respond-to(tablet-xl) {
+			display: flex;
+			flex-direction: column;
+			padding-right: 30px;
+			padding-left: 30px;
+		}
+
+		@include respond-to(mobile) {
+			padding-right: unset;
+			padding-left: unset;
+		}
+	}
+
+	&__img {
+		overflow: hidden;
+		border-radius: var(--b-radius-first);
+		height: max-content;
+		font-size: 0;
+
+		img {
+			height: min(41vw, 520px);
+			object-fit: cover;
+
+			@include respond-to(tablet-xl) {
+				height: 440px;
+			}
+		}
+	}
+
+	&__content {
+		position: relative;
+		border-radius: var(--b-radius-first);
+		padding: 60px;
+		background: var(--color-light);
+
+		.btn {
+			&--list {
+				@include respond-to(tablet-xl) {
+					margin: 0 auto;
+				}
+			}
+
+			@include respond-to(mobile) {
+				padding: 20px 5px;
+			}
+		}
+
+		.paws {
+			position: absolute;
+			right: 30px;
+			top: 30px;
+			width: clamp(50px, 7vw, 70px);
+			height: clamp(50px, 7vw, 70px);
+			background: center / contain no-repeat url("../img/i-paws.svg");
+			transform: rotate(45deg);
+
+			@include respond-to(mobile) {
+				display: none;
+			}
+		}
+
+		@include respond-to(laptop) {
+			padding-right: 50px;
+			padding-left: 50px;
+		}
+
+		@include respond-to(tablet-xl) {
+			padding-right: 30px;
+			padding-left: 30px;
+		}
+
+		@include respond-to(mobile) {
+			padding: 30px 15px;
+		}
+	}
+
+	&__name {
+		margin-bottom: 5px;
+		font-weight: 700;
+		font-size: 24px;
+		color: var(--color-third);
+	}
+
+	&__position {
+		margin-bottom: 30px;
+		font-weight: 700;
+		font-size: 18px;
+	}
+
+	.tags {
+		margin-bottom: 60px;
+	}
+
+	&__row {
+		display: flex;
+		gap: 15px;
+
+		img {
+			width: 25px;
+			height: 25px;
+		}
+
+		&-title {
+			margin-bottom: 8px;
+			font-weight: 700;
+			font-size: 18px;
+		}
+
+		p + p {
+			margin-top: 10px;
+		}
+
+		& + .about-teacher__row {
+			margin-top: 30px;
+		}
+
+		&-wrap {
+			margin-bottom: 60px;
+		}
+	}
+}

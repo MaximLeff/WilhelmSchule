@@ -39,7 +39,7 @@ $mobile: 475px;
 	@media screen and (max-width: $tablet-xl) {
 		--side-offset: 30px;
 		--b-radius-first: 40px;
-		--side-offset-second: clamp(30px, -18.6348px + 10.2389vw, 60px);
+		--side-offset-second: clamp(30px, 12.6958px + 3.643vw, 50px);
 	}
 
 	// @media screen and (max-width: $mobile) {
