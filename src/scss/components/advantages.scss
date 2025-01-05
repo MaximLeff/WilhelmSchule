@@ -198,6 +198,10 @@
 			padding-right: 15px;
 			padding-left: 15px;
 		}
+		@include respond-to(mobile) {
+			padding-top: 60px;
+			padding-bottom: 60px;
+		}
 	}
 
 	@include respond-to(laptop) {

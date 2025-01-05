@@ -58,9 +58,6 @@
 		width: 100%;
 	}
 
-	&__more {
-	}
-
 	.cat {
 		position: absolute;
 		left: 160px;
@@ -148,9 +145,7 @@
 		@include respond-to(tablet) {
 			padding-left: unset;
 		}
-	}
 
-	.text-arrow {
 		&__first {
 			img {
 				transform-origin: top left;
@@ -158,6 +153,7 @@
 				animation-delay: 0s;
 			}
 		}
+
 		&__second {
 			position: absolute;
 			left: clamp(-110px, 42.3077px + -10.5769vw, -66px);
@@ -279,5 +275,9 @@
 		margin-top: 15px;
 		padding: 30px var(--side-offset) 20px;
 		gap: 35px;
+	}
+
+	@include respond-to(mobile) {
+		margin-bottom: 60px;
 	}
 }

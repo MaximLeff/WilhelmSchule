@@ -228,6 +228,10 @@ i.text-arrow {
 
 section:not(.banner-wrap) + section[class] {
 	margin-top: 95px;
+
+	@include respond-to(mobile) {
+		margin-top: 60px;
+	}
 }
 
 .slides {

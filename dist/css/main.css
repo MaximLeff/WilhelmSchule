@@ -4036,6 +4036,9 @@ section:last-child {
   .info__first {
     padding: 40px 5px 50px;
   }
+  section:not(.banner-wrap) + section[class] {
+    margin-top: 60px;
+  }
   .slides .swiper {
     padding-right: 15px;
     padding-left: 15px;
@@ -4088,6 +4091,9 @@ section:last-child {
     padding: 10px 25px;
     max-width: 100%;
   }
+  .banner {
+    margin-bottom: 60px;
+  }
   .grid .subtitle {
     font-size: 16px;
   }
@@ -4114,6 +4120,7 @@ section:last-child {
   .doubts__first {
     margin-right: -30px;
     margin-left: -30px;
+    margin-bottom: 60px;
   }
   .doubts .title__second {
     margin-bottom: 15px;
@@ -4124,6 +4131,7 @@ section:last-child {
   .training .container {
     padding-right: unset;
     padding-left: unset;
+    padding-top: unset;
   }
   .training__card:nth-child(1) .training__card-wrap p:nth-child(2) {
     max-width: clamp(300px, 193.3333px + 26.6667vw, 320px);
@@ -4146,6 +4154,10 @@ section:last-child {
   .course-program__bottom {
     padding-top: 25px;
     width: 100%;
+  }
+  .advantages--container {
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
   .courses__slide {
     padding: 30px 20px;
