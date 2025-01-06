@@ -6,8 +6,44 @@
 	<div data-barba="container">
 		@@include('_parts/_header.html')
 
-		<main>
-			<h1>Contacts</h1>
+		<main class="page-contact">
+			<section class="form container bg__second">
+				<i class="text-arrow text-arrow__second">
+					<img src="img/arrow_3.svg" alt="">
+					<span>Або заповнюй форму зворотнього зв’язку і ми самі тебе знайдемо:</span>
+				</i>
+
+				<form class="form_wrap">
+					<div class="form_row">
+						<div class="form_input_wrap">
+							<input type="name" placeholder="Ім’я" required>
+							<i class="form_name_decor">Яке гарне ім’я!</i>
+							<i class="error">Поле обов’язкове для заповнення!</i>
+						</div>
+					</div>
+					<div class="form_row">
+						<div class="form_input_wrap">
+							<input type="tel" placeholder="+38 (___) ___-__-__" required>
+							<i class="error">Поле обов’язкове для заповнення!</i>
+						</div>
+					</div>
+					<div class="form_row">
+						<div class="form_input_wrap">
+							<textarea placeholder="Повідомлення" type="textarea" id="" rows="3"></textarea>
+						</div>
+					</div>
+					
+					<div class="form_row">
+						<div class="form_input_wrap">
+							<input type="checkbox" id="agreement">
+							<label for="agreement">Згода на обробку персональних даних</label>
+						</div>
+					</div>
+					<div class="form_row">
+						<button type="submit" class="btn btn--first">Відправити</button>
+					</div>
+				</form>
+			</section>
 		</main>
 
 		@@include('_parts/_footer.html')

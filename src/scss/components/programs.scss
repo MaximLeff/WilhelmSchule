@@ -344,61 +344,61 @@
 			&:nth-child(1) {
 				left: -2% !important;
 				top: 32% !important;
-				transform: rotate(40deg) !important;
+				rotate: 40deg;
 			}
 
 			&:nth-child(2) {
 				left: 10% !important;
 				top: 50% !important;
-				transform: rotate(80deg) !important;
+				rotate: 80deg;
 			}
 
 			&:nth-child(3) {
 				left: 16% !important;
 				top: 72% !important;
-				transform: rotate(-135deg) !important;
+				rotate: -135deg;
 			}
 
 			&:nth-child(4) {
 				left: -1% !important;
 				top: 80% !important;
-				transform: rotate(20deg) !important;
+				rotate: 20deg;
 			}
 
 			&:nth-child(5) {
 				left: 18% !important;
 				top: 92% !important;
-				transform: rotate(75deg) !important;
+				rotate: 75deg;
 			}
 
 			&:nth-child(6) {
 				left: 88% !important;
 				top: 38% !important;
-				transform: rotate(100deg) !important;
+				rotate: 100deg;
 			}
 
 			&:nth-child(7) {
 				left: 96% !important;
 				top: 58% !important;
-				transform: rotate(50deg) !important;
+				rotate: 50deg;
 			}
 
 			&:nth-child(8) {
 				left: 84% !important;
 				top: 75% !important;
-				transform: rotate(180deg) !important;
+				rotate: 180deg;
 			}
 
 			&:nth-child(9) {
 				left: 69% !important;
 				top: 88% !important;
-				transform: rotate(82deg) !important;
+				rotate: 82deg;
 			}
 
 			&:nth-child(10) {
 				left: 94% !important;
 				top: 91% !important;
-				transform: rotate(140deg) !important;
+				rotate: 140deg;
 			}
 		}
 	}

@@ -1,0 +1,144 @@
+.form {
+	display: flex;
+	align-items: center;
+	justify-content: end;
+	border-radius: var(--b-radius-first);
+	padding: 30px;
+	gap: 60px;
+
+	&_wrap {
+		display: flex;
+		flex-direction: column;
+		border-radius: var(--b-radius-first);
+		padding: 60px 40px;
+		width: 100%;
+		max-width: 630px;
+		background: var(--color-white);
+		gap: 15px;
+
+		@include respond-to(tablet) {
+			padding: 60px 30px 40px;
+		}
+
+		@include respond-to(mobile) {
+			padding: 30px 15px;
+		}
+	}
+
+	.text-arrow {
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+		max-width: 422px;
+		text-align: right;
+		gap: 60px;
+
+		span {
+			font-family: "DaysOne", sans-serif;
+			font-size: 30px;
+			line-height: 1.4;
+			text-transform: uppercase;
+
+			@include respond-to(tablet) {
+				font-size: 28px;
+			}
+
+			@include respond-to(mobile) {
+				font-size: 24px;
+			}
+		}
+
+		img {
+			position: relative;
+			left: unset;
+			right: unset;
+			width: 176px;
+			height: 83px;
+
+			@include respond-to(tablet-xl) {
+				width: 130px;
+				height: 100%;
+				transform: scaleY(-1);
+			}
+
+			@include respond-to(mobile) {
+				width: 98px;
+				height: 46px;
+			}
+		}
+
+		@include respond-to(tablet-xl) {
+			flex-direction: column-reverse;
+			align-items: center;
+			max-width: 100%;
+			text-align: left;
+			gap: unset;
+		}
+
+		@include respond-to(mobile) {
+			padding-bottom: unset;
+		}
+	}
+
+	.btn {
+		width: 100%;
+	}
+
+	&_input {
+		&_wrap {
+			position: relative;
+		}
+	}
+
+	.error {
+		padding-top: 10px;
+		padding-left: 30px;
+		font-size: 14px;
+		color: var(--color-error);
+	}
+
+	input[type="name"] {
+		padding-right: 180px;
+
+		@include respond-to(tablet) {
+			padding-right: 160px;
+		}
+
+		@include respond-to(mobile) {
+			padding-right: 150px;
+		}
+	}
+
+	.form_name_decor {
+		position: absolute;
+		right: 50px;
+		top: 30px;
+		overflow: hidden;
+		width: 0;
+		font-family: "ShantellSans", sans-serif;
+		font-size: 16px;
+		white-space: nowrap;
+		text-align: right;
+		transition: 0.6s ease-in-out;
+
+		&.active {
+			width: 100%;
+		}
+
+		@include respond-to(tablet) {
+			right: 45px;
+			top: 21px;
+			font-size: 14px;
+		}
+	}
+
+	@include respond-to(tablet-xl) {
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	@include respond-to(tablet) {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+}

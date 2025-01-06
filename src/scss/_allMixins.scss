@@ -31,6 +31,10 @@
 	&--second {
 		color: var(--color-first);
 	}
+
+	&--third {
+		color: var(--color-error);
+	}
 }
 
 main {
@@ -489,14 +493,6 @@ section:not(.banner-wrap) + section[class] {
 }
 
 .text-block {
-	&.container {
-		padding-bottom: unset;
-		padding-top: unset;
-		@include respond-to(mobile) {
-			padding-left: 15px;
-			padding-right: 15px;
-		}
-	}
 	h2[class^="title"] {
 		margin-bottom: 30px;
 		padding-left: 30px;
@@ -508,9 +504,10 @@ section:not(.banner-wrap) + section[class] {
 		@include respond-to(tablet) {
 			padding-left: unset;
 		}
+
 		@include respond-to(mobile) {
-			padding-left: 15px;
 			margin-bottom: 15px;
+			padding-left: 15px;
 		}
 	}
 
@@ -589,6 +586,110 @@ section:not(.banner-wrap) + section[class] {
 
 		@include respond-to(tablet) {
 			padding: 30px;
+		}
+	}
+
+	&.container {
+		padding-top: unset;
+		padding-bottom: unset;
+
+		@include respond-to(mobile) {
+			padding-right: 15px;
+			padding-left: 15px;
+		}
+	}
+}
+
+input:not([type="checkbox"]),
+textarea {
+	border: unset;
+	border-radius: 30px;
+	padding: 24px 30px;
+	width: 100%;
+	font-family: "Inter", sans-serif;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 1.4;
+	background: var(--color-light);
+
+	@include respond-to(tablet) {
+		padding: 15px;
+		border-radius: 20px;
+	}
+
+	&::placeholder {
+		color: var(--color-dark);
+		opacity: 0.3;
+	}
+}
+
+textarea {
+	resize: none;
+}
+
+input {
+	&[type="name"],
+	&[type="tel"] {
+		padding-right: 65px;
+		background-image: url("../img/i-paws.svg");
+		background-position: right 20px center;
+		background-repeat: no-repeat;
+	}
+
+	&.input_error {
+		&[type="name"],
+		&[type="tel"] {
+			background-image: url("../img/i-paws--red.svg");
+		}
+	}
+}
+
+input[type="checkbox"] {
+	position: absolute;
+
+	~ label {
+		display: flex;
+		align-items: center;
+		padding-left: 30px;
+		cursor: url("../img/hover-paws_dark.svg"), pointer;
+		gap: 15px;
+		@include respond-to(tablet) {
+			font-size: 11px;
+		}
+		
+
+		@include respond-to(tablet) {
+			padding-left: 15px;
+		}
+
+		&::before {
+			flex-shrink: 0;
+			content: "";
+			display: block;
+			border: 2px solid rgba(45, 42, 51, 0.3);
+			border-radius: 6px;
+			width: 20px;
+			height: 20px;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			margin-top: 1px;
+			margin-left: 3px;
+			width: 14px;
+			height: 14px;
+			background: center / contain no-repeat url("../img/i-check.svg");
+			opacity: 0;
+			transition: var(--anim2);
+		}
+	}
+
+	&:checked {
+		~ label {
+			&::after {
+				opacity: 1;
+			}
 		}
 	}
 }

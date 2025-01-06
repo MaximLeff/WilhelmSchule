@@ -61,9 +61,10 @@
 
 		&__third {
 			margin-bottom: 30px;
+
 			@include respond-to(tablet) {
-				font-size: 22px;
 				margin-bottom: 15px;
+				font-size: 22px;
 			}
 		}
 	}
@@ -91,16 +92,18 @@
 
 		ul {
 			break-inside: avoid;
-			@include respond-to(tablet) {
-				padding-left: 10px !important;
-			}
 
 			li {
 				font-weight: 400 !important;
 				font-size: 16px !important;
+
 				@include respond-to(tablet) {
 					font-size: 14px !important;
 				}
+			}
+
+			@include respond-to(tablet) {
+				padding-left: 10px !important;
 			}
 		}
 
@@ -117,6 +120,11 @@
 		@include respond-to(mobile) {
 			font-size: 14px;
 		}
+	}
+
+	a {
+		color: var(--color-third);
+		cursor: url("../img/hover-paws_dark.svg"), pointer;
 	}
 
 	&.container {
